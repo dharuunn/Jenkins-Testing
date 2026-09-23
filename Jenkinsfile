@@ -18,7 +18,8 @@ pipeline {
         
         stage('Run Linter') {
             steps {
-                echo "Simulating Linter check on app.py... No syntax errors found!"
+                echo "Simulating Linter check... Found unused import 'import os'!"
+                error("Linting failed due to unused import statements.")
             }
         }
     }
